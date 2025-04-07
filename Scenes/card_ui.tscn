@@ -1,0 +1,314 @@
+[gd_scene load_steps=12 format=3 uid="uid://c73n428kstn1v"]
+
+[ext_resource type="Theme" uid="uid://bbfbat2tvws7t" path="res://Art/UI_theme.tres" id="1_2ndah"]
+[ext_resource type="Script" uid="uid://ce0ollwtcscfn" path="res://Code/card_ui.gd" id="1_y8epe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf2xd"]
+bg_color = Color(0.222755, 0.309924, 0.55624, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0, 0.193586, 0.344866, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ndah"]
+bg_color = Color(0.298362, 0.400122, 0.680959, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(6.73831e-07, 0.327892, 0.560907, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7w5n5"]
+bg_color = Color(0.156593, 0.224853, 0.419357, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(1.56425e-07, 0.156736, 0.28559, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2yy3o"]
+bg_color = Color(0, 0.529412, 0.317647, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(6.55781e-07, 0.241773, 0.134236, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_278fk"]
+bg_color = Color(0, 0.705459, 0.429902, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(8.90419e-07, 0.33945, 0.196519, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxiou"]
+bg_color = Color(0, 0.373981, 0.218537, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(3.00817e-08, 0.17432, 0.0912245, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rm57c"]
+bg_color = Color(0.494118, 0.145098, 0.32549, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.243977, 0.0520346, 0.151649, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ba8y5"]
+bg_color = Color(0.658868, 0.216478, 0.442816, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.439517, 0.124033, 0.287339, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lp0xi"]
+bg_color = Color(0.327818, 0.0824942, 0.209717, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.150555, 0.0215591, 0.0870355, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="Card UI" type="Control" node_paths=PackedStringArray("BlueTitle", "BlueText", "GreenTitle", "GreenText", "RedTitle", "RedText")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_2ndah")
+script = ExtResource("1_y8epe")
+BlueTitle = NodePath("HBoxContainer/VBoxContainer4/HBoxContainer2/Card 1/blue button/holder/Card 1 Title Label")
+BlueText = NodePath("HBoxContainer/VBoxContainer4/HBoxContainer2/Card 1/blue button/holder/Card 1 Text Label")
+GreenTitle = NodePath("HBoxContainer/VBoxContainer4/HBoxContainer2/Card 2/green card/VBoxContainer/Card 2 Title Label")
+GreenText = NodePath("HBoxContainer/VBoxContainer4/HBoxContainer2/Card 2/green card/VBoxContainer/Card 2 Text Label")
+RedTitle = NodePath("HBoxContainer/VBoxContainer4/HBoxContainer2/Card 3/red card/VBoxContainer/Card 3 Title Label")
+RedText = NodePath("HBoxContainer/VBoxContainer4/HBoxContainer2/Card 3/red card/VBoxContainer/Card 3 Text Label")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = 0.111111
+anchor_right = 0.875
+anchor_bottom = 0.888889
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(600, 300)
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer4"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Card 1" type="VBoxContainer" parent="HBoxContainer/VBoxContainer4/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="blue button" type="Button" parent="HBoxContainer/VBoxContainer4/HBoxContainer2/Card 1"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/focus = SubResource("StyleBoxFlat_gf2xd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ndah")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7w5n5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gf2xd")
+
+[node name="holder" type="VBoxContainer" parent="HBoxContainer/VBoxContainer4/HBoxContainer2/Card 1/blue button"]
+custom_minimum_size = Vector2(320, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -300.0
+offset_right = 160.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(160, 300)
+theme_override_constants/separation = 5
+
+[node name="Card 1 Title Label" type="RichTextLabel" parent="HBoxContainer/VBoxContainer4/HBoxContainer2/Card 1/blue button/holder"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 1
+text = "Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card 1 Text Label" type="RichTextLabel" parent="HBoxContainer/VBoxContainer4/HBoxContainer2/Card 1/blue button/holder"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+text = "This text needs:
+1. Be set programatically
+2. Font stuff
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card 2" type="VBoxContainer" parent="HBoxContainer/VBoxContainer4/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="green card" type="Button" parent="HBoxContainer/VBoxContainer4/HBoxContainer2/Card 2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/focus = SubResource("StyleBoxFlat_2yy3o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_278fk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vxiou")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2yy3o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer4/HBoxContainer2/Card 2/green card"]
+custom_minimum_size = Vector2(320, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -300.0
+offset_right = 160.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(160, 300)
+
+[node name="Card 2 Title Label" type="RichTextLabel" parent="HBoxContainer/VBoxContainer4/HBoxContainer2/Card 2/green card/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 1
+text = "Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card 2 Text Label" type="RichTextLabel" parent="HBoxContainer/VBoxContainer4/HBoxContainer2/Card 2/green card/VBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+text = "This text needs:
+1. Be set programatically
+2. Font stuff
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Card 3" type="VBoxContainer" parent="HBoxContainer/VBoxContainer4/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="red card" type="Button" parent="HBoxContainer/VBoxContainer4/HBoxContainer2/Card 3"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/focus = SubResource("StyleBoxFlat_rm57c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ba8y5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lp0xi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rm57c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer4/HBoxContainer2/Card 3/red card"]
+custom_minimum_size = Vector2(320, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -300.0
+offset_right = 160.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(160, 300)
+
+[node name="Card 3 Title Label" type="RichTextLabel" parent="HBoxContainer/VBoxContainer4/HBoxContainer2/Card 3/red card/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 1
+text = "Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card 3 Text Label" type="RichTextLabel" parent="HBoxContainer/VBoxContainer4/HBoxContainer2/Card 3/red card/VBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+text = "This text needs:
+1. Be set programatically
+2. Font stuff
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="draw" from="." to="." method="_on_draw"]
+[connection signal="hidden" from="." to="." method="_on_hidden"]
+[connection signal="button_up" from="HBoxContainer/VBoxContainer4/HBoxContainer2/Card 1/blue button" to="." method="_on_blue_button_button_up"]
+[connection signal="button_up" from="HBoxContainer/VBoxContainer4/HBoxContainer2/Card 2/green card" to="." method="_on_green_card_button_up"]
+[connection signal="button_up" from="HBoxContainer/VBoxContainer4/HBoxContainer2/Card 3/red card" to="." method="_on_red_card_button_up"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://docm8cwphw4dm"
+path="res://.godot/imported/imp spell.ogg-9d2e6da36b5226ab89b2a7a2f91daa9e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound/imp spell.ogg"
+dest_files=["res://.godot/imported/imp spell.ogg-9d2e6da36b5226ab89b2a7a2f91daa9e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

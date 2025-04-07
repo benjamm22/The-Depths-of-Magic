@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ljcnr6gboq4k"]
+
+[ext_resource type="AudioStream" uid="uid://dn63vecmyjlaw" path="res://Sound/punch.ogg" id="1_h7w43"]
+[ext_resource type="Script" uid="uid://nt0kgjwcsm5s" path="res://Code/sound.gd" id="2_xrqaa"]
+
+[node name="player hit sound" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_h7w43")
+volume_db = 3.0
+pitch_scale = 2.0
+autoplay = true
+script = ExtResource("2_xrqaa")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://drllcsaf06wqx"]
+
+[ext_resource type="PackedScene" uid="uid://c0bqx5j1klnby" path="res://Art/models/bookcase.glb" id="1_y1qin"]
+[ext_resource type="Material" uid="uid://b7ht42l2ouma" path="res://Art/materials/outline_mat.tres" id="2_tgqcj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tgqcj"]
+size = Vector3(6.3111, 3.64893, 1.44684)
+
+[node name="Bookshelf" type="StaticBody3D" groups=["Obstacle"]]
+
+[node name="bookcase2" parent="." instance=ExtResource("1_y1qin")]
+
+[node name="bookcase" parent="bookcase2" index="0"]
+material_overlay = ExtResource("2_tgqcj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00473022, 1.82202, 0.147797)
+shape = SubResource("BoxShape3D_tgqcj")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="."]
+height = 5.0
+vertices = PackedVector3Array(-3.25256, 0, 0.595163, 3.21079, 0, 0.586831, 3.22533, 0, -0.537731, -3.22298, 0, -0.554438)
+affect_navigation_mesh = true
+
+[editable path="bookcase2"]

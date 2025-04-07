@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://c3vyxg5i5tp4w"]
+
+[ext_resource type="Script" uid="uid://8u2axcmbthi" path="res://Code/imp_ball.gd" id="1_amntx"]
+[ext_resource type="Material" uid="uid://dru7x1u6j3him" path="res://Art/materials/outline_mat_big.tres" id="2_amntx"]
+[ext_resource type="Material" uid="uid://b7ht42l2ouma" path="res://Art/materials/outline_mat.tres" id="3_35f2w"]
+[ext_resource type="Material" uid="uid://bq5sh7fap8cvu" path="res://Art/materials/imp_ball.tres" id="3_lyc4l"]
+[ext_resource type="Material" uid="uid://cmodv132pndfe" path="res://Art/materials/imp_ball_spin.tres" id="5_yvudi"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_xi7wk"]
+material = ExtResource("3_lyc4l")
+radius = 0.2
+height = 0.4
+radial_segments = 6
+rings = 3
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xi7wk"]
+height = 4.0
+radius = 0.257813
+
+[sub_resource type="SphereMesh" id="SphereMesh_lyc4l"]
+material = ExtResource("5_yvudi")
+radius = 0.1
+height = 0.2
+radial_segments = 6
+rings = 12
+
+[node name="impball" type="Node3D"]
+script = ExtResource("1_amntx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_overlay = ExtResource("2_amntx")
+mesh = SubResource("SphereMesh_xi7wk")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_xi7wk")
+
+[node name="orbit control" type="Node3D" parent="."]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="orbit control"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+material_overlay = ExtResource("3_35f2w")
+mesh = SubResource("SphereMesh_lyc4l")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="orbit control"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+material_overlay = ExtResource("3_35f2w")
+mesh = SubResource("SphereMesh_lyc4l")
+skeleton = NodePath("../..")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

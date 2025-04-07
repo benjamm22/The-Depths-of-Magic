@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dopjr5cak01pc"]
+
+[ext_resource type="PackedScene" uid="uid://b7016t37fxjq6" path="res://Art/models/table.glb" id="1_ix8et"]
+[ext_resource type="Material" uid="uid://dru7x1u6j3him" path="res://Art/materials/outline_mat_big.tres" id="2_4ppvu"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4ppvu"]
+height = 1.63916
+radius = 1.70166
+
+[node name="Table" type="StaticBody3D"]
+
+[node name="table2" parent="." instance=ExtResource("1_ix8et")]
+
+[node name="table" parent="table2" index="0"]
+material_overlay = ExtResource("2_4ppvu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.819579, 0)
+shape = SubResource("CylinderShape3D_4ppvu")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.282643, 0)
+height = 5.0
+vertices = PackedVector3Array(-0.00998531, 0, -1.81449, 1.21692, 0, -1.35703, 1.77064, 0, -0.00402169, 1.26057, 0, 1.31536, 0.111609, 0, 1.78505, -1.31983, 0, 1.32511, -1.86665, 0, 0.0203699, -1.30309, 0, -1.26191)
+affect_navigation_mesh = true
+
+[editable path="table2"]

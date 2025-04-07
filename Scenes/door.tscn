@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://8lal1pk16c1a"]
+
+[ext_resource type="Script" uid="uid://244hmhuxb6fh" path="res://Code/door.gd" id="1_kj2pw"]
+[ext_resource type="PackedScene" uid="uid://c8y1jg3r21ndt" path="res://Art/models/door_frame.glb" id="2_8c32u"]
+[ext_resource type="Material" uid="uid://dru7x1u6j3him" path="res://Art/materials/outline_mat_big.tres" id="3_ovubi"]
+[ext_resource type="PackedScene" uid="uid://cnnel657nhkrj" path="res://Art/models/door_left.glb" id="4_sl2j7"]
+[ext_resource type="PackedScene" uid="uid://biytx2stk81i1" path="res://Art/models/door_handle.glb" id="5_ihyep"]
+[ext_resource type="Material" uid="uid://doi68xmf63l7a" path="res://Art/materials/outline_mat_small.tres" id="6_gkskb"]
+[ext_resource type="PackedScene" uid="uid://d4g71qx5cuf52" path="res://Art/models/door_right.glb" id="7_33pem"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hiqwa"]
+size = Vector3(4.08398, 4.3, 0.847)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kj2pw"]
+size = Vector3(4.08158, 4.26231, 0.920654)
+
+[node name="DoorScene" type="StaticBody3D"]
+script = ExtResource("1_kj2pw")
+
+[node name="blocking collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.099, 0.304)
+shape = SubResource("BoxShape3D_hiqwa")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="area collision" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00022316, 2.06171, 0.327698)
+shape = SubResource("BoxShape3D_kj2pw")
+debug_color = Color(0.99751, 0, 0.164338, 0.42)
+
+[node name="door_frame" parent="." instance=ExtResource("2_8c32u")]
+
+[node name="door frame" parent="door_frame" index="0"]
+material_overlay = ExtResource("3_ovubi")
+
+[node name="door_left" parent="." instance=ExtResource("4_sl2j7")]
+
+[node name="door left" parent="door_left" index="0"]
+material_overlay = ExtResource("3_ovubi")
+
+[node name="door_handle" parent="door_left/door left" index="0" instance=ExtResource("5_ihyep")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26944, 0, -0.330997)
+
+[node name="handle" parent="door_left/door left/door_handle" index="0"]
+material_overlay = ExtResource("6_gkskb")
+
+[node name="door_right" parent="." instance=ExtResource("7_33pem")]
+
+[node name="door right" parent="door_right" index="0"]
+material_overlay = ExtResource("3_ovubi")
+
+[node name="door_handle2" parent="door_right/door right" index="0" instance=ExtResource("5_ihyep")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35424, 0, -0.330997)
+
+[node name="handle" parent="door_right/door right/door_handle2" index="0"]
+material_overlay = ExtResource("6_gkskb")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+
+[editable path="door_frame"]
+[editable path="door_left"]
+[editable path="door_left/door left/door_handle"]
+[editable path="door_right"]
+[editable path="door_right/door right/door_handle2"]

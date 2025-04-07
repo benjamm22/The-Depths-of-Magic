@@ -1,0 +1,140 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce80ec7a7nun0"]
+
+[ext_resource type="Theme" uid="uid://bbfbat2tvws7t" path="res://Art/UI_theme.tres" id="1_ems2k"]
+[ext_resource type="Script" uid="uid://btlkrxqmreh7v" path="res://Code/defeat_screen.gd" id="2_ems2k"]
+[ext_resource type="Texture2D" uid="uid://dsg2tmui8bytf" path="res://Art/ui/Sound.png" id="3_qi2gy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg7cd"]
+bg_color = Color(0.52632, 0, 0.141666, 1)
+border_width_left = 100
+border_width_top = 100
+border_width_right = 100
+border_width_bottom = 100
+border_color = Color(0.670276, 0, 0.190367, 1)
+border_blend = true
+
+[node name="Defeat screen" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_ems2k")
+script = ExtResource("2_ems2k")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_bg7cd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="left buffer" type="Control" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="Left Section" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Info" type="RichTextLabel" parent="Panel/HBoxContainer/Left Section"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 25
+text = "This is where you put the information about how hard you sucked :)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Middle Section" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 75
+alignment = 1
+
+[node name="Title" type="RichTextLabel" parent="Panel/HBoxContainer/Middle Section"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.134863, 0.474345, 0.635838, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 100
+text = "DEFEAT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Retry Button" type="Button" parent="Panel/HBoxContainer/Middle Section"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Retry"
+
+[node name="Quit Button" type="Button" parent="Panel/HBoxContainer/Middle Section"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[node name="Controls section" type="HBoxContainer" parent="Panel/HBoxContainer/Middle Section"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Controls label" type="Label" parent="Panel/HBoxContainer/Middle Section/Controls section"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
+[node name="RightSection" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Mute Button2" type="Button" parent="Panel/HBoxContainer/RightSection"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/RightSection/Mute Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_qi2gy")
+
+[node name="volume slider" type="HSlider" parent="Panel/HBoxContainer/RightSection"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 2.0
+step = 0.001
+
+[node name="right buffer" type="Control" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="button_up" from="Panel/HBoxContainer/Middle Section/Retry Button" to="." method="_on_retry_button_button_up"]
+[connection signal="button_up" from="Panel/HBoxContainer/Middle Section/Quit Button" to="." method="_on_quit_button_button_up"]
+[connection signal="button_up" from="Panel/HBoxContainer/RightSection/Mute Button2" to="." method="_on_mute_button_2_button_up"]
+[connection signal="value_changed" from="Panel/HBoxContainer/RightSection/volume slider" to="." method="_on_volume_slider_value_changed"]

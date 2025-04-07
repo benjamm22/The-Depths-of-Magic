@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj4ad1gnh0snx"]
+
+[ext_resource type="PackedScene" uid="uid://cs07oqvbpdpts" path="res://Art/models/bench.glb" id="1_rgxpg"]
+[ext_resource type="Material" uid="uid://b7ht42l2ouma" path="res://Art/materials/outline_mat.tres" id="2_e6kot"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e6kot"]
+size = Vector3(1.90186, 1.20056, 1)
+
+[node name="Bench" type="StaticBody3D"]
+
+[node name="bench2" parent="." instance=ExtResource("1_rgxpg")]
+
+[node name="bench" parent="bench2" index="0"]
+material_overlay = ExtResource("2_e6kot")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0256348, 0.584167, 0)
+shape = SubResource("BoxShape3D_e6kot")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="."]
+height = 1.5
+vertices = PackedVector3Array(-0.978595, 0, -0.47832, -0.987446, 0, 0.486102, 0.993061, 0, 0.515546, 0.993659, 0, -0.519742)
+affect_navigation_mesh = true
+
+[editable path="bench2"]

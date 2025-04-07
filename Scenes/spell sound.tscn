@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://j8usofpgfdn"]
+
+[ext_resource type="Script" uid="uid://nt0kgjwcsm5s" path="res://Code/sound.gd" id="1_1tstp"]
+[ext_resource type="AudioStream" uid="uid://dr5tyispdn627" path="res://Sound/spell.ogg" id="1_koagt"]
+
+[node name="spell sound" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_koagt")
+autoplay = true
+script = ExtResource("1_1tstp")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

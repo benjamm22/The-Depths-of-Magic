@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cc05qohjhsfkv"]
+
+[ext_resource type="Script" uid="uid://bum8lm2oxlixy" path="res://Code/fireball.gd" id="1_xi7wk"]
+[ext_resource type="Material" uid="uid://cih76a763dvj5" path="res://Art/materials/color palette/cp1_black_mat.tres" id="2_0mxqg"]
+[ext_resource type="PackedScene" uid="uid://b1ne4bw4jsd7h" path="res://Scenes/fire_particles.tscn" id="3_ne4qj"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_xi7wk"]
+material = ExtResource("2_0mxqg")
+radius = 0.35
+height = 0.7
+radial_segments = 6
+rings = 3
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xi7wk"]
+height = 0.831177
+radius = 0.257813
+
+[node name="Fireball" type="Node3D"]
+script = ExtResource("1_xi7wk")
+fire_particles = ExtResource("3_ne4qj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_xi7wk")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0088501, 0)
+shape = SubResource("CylinderShape3D_xi7wk")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

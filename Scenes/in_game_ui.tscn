@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://krbjimumlld5"]
+
+[ext_resource type="Theme" uid="uid://bbfbat2tvws7t" path="res://Art/UI_theme.tres" id="1_5x6se"]
+[ext_resource type="Script" uid="uid://dwkn3tp8ywp3" path="res://Code/in_game_ui.gd" id="2_ey7ub"]
+
+[node name="In game UI" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_5x6se")
+script = ExtResource("2_ey7ub")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 358.0
+offset_bottom = 58.0
+max_value = 20.0
+value = 5.0

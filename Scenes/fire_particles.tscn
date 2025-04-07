@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1ne4bw4jsd7h"]
+
+[ext_resource type="Script" uid="uid://c25bfgfs0n2pc" path="res://Code/fire_particles.gd" id="1_dobhm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0mxqg"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_0mxqg"]
+material = SubResource("StandardMaterial3D_0mxqg")
+radius = 0.35
+height = 0.7
+radial_segments = 4
+rings = 2
+
+[sub_resource type="Curve" id="Curve_0mxqg"]
+_data = [Vector2(0, 1), -0.111266, 0.238937, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_ne4qj"]
+offsets = PackedFloat32Array(0, 0.0788804, 0.310433, 0.697201, 1)
+colors = PackedColorArray(0.98, 0.620667, 0, 0, 0.979043, 0.399046, 1.34766e-06, 1, 1, 0.174174, 0.127216, 1, 0, 0, 0, 0.996078, 0, 0, 0, 0)
+
+[node name="fire particles" type="CPUParticles3D"]
+amount = 15
+lifetime = 0.5
+randomness = 1.0
+local_coords = true
+mesh = SubResource("SphereMesh_0mxqg")
+direction = Vector3(0, 0, 1)
+spread = 3.0
+flatness = 1.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 4.0
+initial_velocity_max = 12.0
+scale_amount_min = 0.6
+scale_amount_curve = SubResource("Curve_0mxqg")
+color_ramp = SubResource("Gradient_ne4qj")
+script = ExtResource("1_dobhm")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxh3yg6wyfaw0"]
+
+[ext_resource type="AudioStream" uid="uid://bn4t7e6nlgdip" path="res://Sound/bee attack.ogg" id="1_oqvxk"]
+[ext_resource type="Script" uid="uid://nt0kgjwcsm5s" path="res://Code/sound.gd" id="2_3pxng"]
+
+[node name="bug sound" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_oqvxk")
+autoplay = true
+script = ExtResource("2_3pxng")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

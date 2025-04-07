@@ -1,0 +1,118 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdybdbn2h4iyd"]
+
+[ext_resource type="Script" uid="uid://l6n00od8hgl5" path="res://play_screen.gd" id="1_bg7cd"]
+[ext_resource type="Texture2D" uid="uid://b7pix6hbavrks" path="res://Sound.png" id="2_6mk6g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg7cd"]
+bg_color = Color(0.737769, 0.522455, 0.663413, 1)
+
+[node name="Play Screen" type="Control" node_paths=PackedStringArray("muteButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bg7cd")
+muteButton = NodePath("HBoxContainer/Right Buffer/Mute Button")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bg7cd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left Buffer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Left Buffer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Left Left Buffer" type="VBoxContainer" parent="HBoxContainer/Left Buffer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Left Buffer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Description Buffer" type="VBoxContainer" parent="HBoxContainer/Left Buffer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Left Buffer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 25
+text = "Put objective of the game here
+"
+horizontal_alignment = 1
+
+[node name="Left Right Buffer" type="VBoxContainer" parent="HBoxContainer/Left Buffer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Middle Section" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Top Buffer" type="HBoxContainer" parent="HBoxContainer/Middle Section"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Play Button" type="Button" parent="HBoxContainer/Middle Section"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Play"
+
+[node name="Middle Buffer" type="HBoxContainer" parent="HBoxContainer/Middle Section"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Quit Button" type="Button" parent="HBoxContainer/Middle Section"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[node name="Controls section" type="HBoxContainer" parent="HBoxContainer/Middle Section"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Controls label" type="Label" parent="HBoxContainer/Middle Section/Controls section"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Controls:
+WASD or Arrow Keys to move
+Mouse Click to attack
+Esc to pause game"
+horizontal_alignment = 1
+
+[node name="Right Buffer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Mute Button" type="Button" parent="HBoxContainer/Right Buffer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+icon = ExtResource("2_6mk6g")
+
+[connection signal="button_up" from="HBoxContainer/Right Buffer/Mute Button" to="." method="_on_mute_button_button_up"]
