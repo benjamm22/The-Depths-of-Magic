@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b2d3y2ixvgbwl"]
+
+[ext_resource type="Shader" uid="uid://d8hwx3uw1j36" path="res://Art/shaders/main_shader.gdshader" id="1_4fyap"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_4fyap")
+shader_parameter/base_color = Color(0.197937, 0.197937, 0.197937, 1)
+shader_parameter/value_shift = 2.0
+shader_parameter/flash_amount = 0.0

@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://k4rsgc4adbrs"]
+
+[ext_resource type="Shader" uid="uid://bnmbqm2aj53oh" path="res://Art/shaders/walls_ground_shader.gdshader" id="1_nwd2l"]
+[ext_resource type="Texture2D" uid="uid://ddm26xuw6x557" path="res://Art/textures/tiles.png" id="2_n72qi"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_nwd2l")
+shader_parameter/base_color = Color(0.197937, 0.197937, 0.197937, 1)
+shader_parameter/value_shift = 1.605
+shader_parameter/pattern = ExtResource("2_n72qi")
+shader_parameter/object_xy_size = Vector2(10, 30)
+shader_parameter/tiling = 100.0
+shader_parameter/pattern_intensity_mult = 0.013
+shader_parameter/depth_mod_mult = 1.0

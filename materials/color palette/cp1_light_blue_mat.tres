@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bci18ikaxaaa8"]
+
+[ext_resource type="Shader" uid="uid://d8hwx3uw1j36" path="res://Art/shaders/main_shader.gdshader" id="1_hxrks"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_hxrks")
+shader_parameter/base_color = Color(0.160784, 0.678431, 1, 1)
+shader_parameter/value_shift = 2.0
+shader_parameter/flash_amount = 0.0

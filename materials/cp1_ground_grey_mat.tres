@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cpwoygpathuhs"]
+
+[ext_resource type="Shader" uid="uid://1qm1bl233g4j" path="res://Art/shaders/walls_ground_shader.gdshader" id="1_wxtks"]
+[ext_resource type="Texture2D" uid="uid://c2qvp4cul64jk" path="res://Art/textures/dots.png" id="2_sqfa4"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_wxtks")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/value_shift = 2.0
+shader_parameter/pattern = ExtResource("2_sqfa4")
+shader_parameter/object_xy_size = Vector2(10, 20)
+shader_parameter/tiling = 150.0
+shader_parameter/pattern_intensity_mult = 0.025
+shader_parameter/depth_mod_mult = 1.0

@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ddwg2j5x6nteq"]
+
+[ext_resource type="Shader" uid="uid://d8hwx3uw1j36" path="res://Art/shaders/main_shader.gdshader" id="1_mf245"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_mf245")
+shader_parameter/base_color = Color(0, 0.894118, 0.211765, 1)
+shader_parameter/value_shift = 2.0
+shader_parameter/flash_amount = 0.0
